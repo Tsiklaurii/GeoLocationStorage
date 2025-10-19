@@ -1,39 +1,29 @@
- <!-- Header -->
- <header>
-  <div class="header-container">
-    <div class="logo">
-      <a href="{{ url_for('main.index') }}">
-        <div class="line1">საქართველოს</div>
-        <div class="line2">ისტორიულ</div>
-        <div class="line3">ადგილთა საცავი</div>
+<!-- Header -->
+<header>
+  <div class="main_container">
+    <nav aria-label="Header Navigation">
+      <a href="/" class="header_title"><img src="../../static/assets/images/svg/Main-logo.svg" alt="header main logo" />
       </a>
-    </div>
-    <div class="navigation">
-      <nav>
-        <ul>
-          <li>
-            <a href="{{ url_for('main.index') }}" class="nav-button">მთავარი</a>
-          </li>
-          <li>
-            <a href="{{ url_for('pages.locations') }}" class="nav-button">ადგილები</a>
-          </li>
-          <li>
-            <a href="{{ url_for('pages.bibliography') }}" class="nav-button"
-              >ბიბლიოგრაფია</a
-            >
-          </li>
-        </ul>
-      </nav>
-      <div class="search-container">
-        <img
-          class="loop-icon"
+      <ul class="nav_links">
+        <li><a href="#">ადგილები</a></li>
+        <li><a href="#">ბიბლიოგრაფია</a></li>
+        <li><a href="#">პროექტის შესახებ</a></li>
+      </ul>
+      <ul class="language_links">
+        <li class="search_element">
+          <img src="../../static/assets/images/svg/search-icon.svg" alt="search-icon" />
+        </li>
 
-          src="{{ url_for('static', filename='assets/loop-icon.svg') }}"
-
-          alt="loop-icon"
-        />
-        <input type="text" placeholder="ძიება" />
-      </div>
-    </div>
+        <li class="visible_link language_same_style">
+          GEO
+          <img width="8" height="8" src="../../static/assets/images/svg/arrow-down-up.svg" alt="change language"
+            class="change_language_icon" />
+        </li>
+        <li class="invisible_link language_same_style">ENG</li>
+        <li class="hamburger_element">
+          <img class="hamburger_icon" src="../../static/assets/images/svg/hamburger.svg" alt="hambuger menu" />
+        </li>
+      </ul>
+    </nav>
   </div>
 </header>

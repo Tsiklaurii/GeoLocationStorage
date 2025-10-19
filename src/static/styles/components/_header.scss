@@ -1,0 +1,174 @@
+header {
+    background-color: $headerBackgroundColor;
+    height: 95px;
+
+    .main_container {
+        max-width: 1440px;
+        display: flex;
+        align-items: center;
+        padding: 0 $mainPadding;
+        height: 100%;
+        margin: 0 auto;
+
+        nav {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            color: $white;
+
+            .header_title {
+                img {
+                    width: 170px;
+                }
+            }
+
+            .nav_links {
+                position: absolute;
+                display: none;
+                gap: 36px;
+                top: 50%;
+                left: 55%;
+                transform: translate(-50%, -50%);
+
+                a {
+                    color: $white;
+                    font-size: 14px;
+                    white-space: nowrap;
+                }
+            }
+
+            .language_links {
+                user-select: none;
+                position: relative;
+                display: flex;
+                gap: 32px;
+
+                .visible_link {
+                    display: none;
+                    justify-content: center;
+                    align-items: center;
+                    color: $headerBackgroundColor;
+                    background-color: $white;
+
+                    .change_language_icon {
+                        transform: rotate(0deg);
+                        transition: all 0.3s ease;
+                    }
+
+                    .rotate-icon {
+                        transform: rotate(180deg);
+                        transition: all 0.3s ease;
+                    }
+                }
+
+                .invisible_link {
+                    position: absolute;
+                    opacity: 0;
+                    visibility: hidden;
+                    pointer-events: none;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border: 1px white solid;
+                    width: 49px;
+                    top: calc(100% + 8px);
+                    right: 0;
+                    transition: opacity 0.3s ease;
+                }
+
+                .invisible_link-flex {
+                    opacity: 1;
+                    visibility: visible;
+                }
+
+                .language_same_style {
+                    font-size: 14px;
+                    padding: 4px;
+                    height: 32px;
+                    gap: 2px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                }
+
+                li {
+                    .hamburger_icon {
+                        height: 28px;
+                        width: 32px;
+                    }
+
+                    .change_language_icon {
+                        transform: rotate(0deg);
+                        transition: all 0.3s ease;
+                    }
+                }
+
+                .hamburger_element {
+                    display: block;
+                }
+
+                .search_element {
+                    display: flex;
+                    align-items: center;
+                }
+            }
+        }
+    }
+
+    @include responsive(small) {
+        .main_container {
+            padding: 0 calc((47 - 16) / (834 - 390) * (100vw - 390px) + 16px);
+        }
+    }
+
+    @include responsive(medium) {
+        height: 136px;
+
+        .main_container {
+            padding: 0 calc((160 - 47) / (1440 - 834) * (100vw - 834px) + 47px);
+
+            nav {
+                .language_links {
+                    .hamburger_element {
+                        display: none;
+                    }
+
+                    .visible_link {
+                        display: flex;
+                    }
+                }
+
+                .nav_links {
+                    display: flex;
+                }
+            }
+        }
+    }
+
+    @include responsive(large) {
+        height: 156px;
+
+        .main_container {
+            nav {
+                .header_title {
+                    img {
+                        width: 218px;
+                    }
+                }
+
+                .nav_links {
+                    a {
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
+
+    @include responsive(larger) {
+        .main_container {
+            padding: 0 160px;
+        }
+    }
+}

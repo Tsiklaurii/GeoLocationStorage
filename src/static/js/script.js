@@ -1,3 +1,20 @@
+// Header
+const visibleLink = document.querySelector(".visible_link");
+const invisibleLink = document.querySelector(".invisible_link");
+const languageIcon = document.querySelector(".change_language_icon");
+visibleLink.addEventListener("click", () => {
+  invisibleLink.classList.toggle("invisible_link-flex");
+  languageIcon.classList.toggle("rotate-icon");
+});
+document.addEventListener("click", (event) => {
+  const target = event.target;
+  if (!visibleLink.contains(target)) {
+    invisibleLink.classList.remove("invisible_link-flex");
+    languageIcon.classList.remove("rotate-icon");
+  }
+});
+
+
 // dropdowns
 const dropdownBtn = document.querySelectorAll(".dropdown-btn");
 
